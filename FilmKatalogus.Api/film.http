@@ -1,0 +1,68 @@
+GET http://localhost:5086/filmek
+
+###
+
+GET http://localhost:5086/filmek/4
+
+###
+
+POST http://localhost:5086/filmek
+Content-Type: application/json
+
+{
+    "cim": "Inception",
+    "rendezo": "Christopher Nolan",
+    "ev": 2010
+}
+
+###
+
+PUT http://localhost:5086/filmek/4
+Content-Type: application/json
+
+{
+    "cim": "The Dark Knight",
+    "rendezo": "Christopher Nolan",
+    "ev": 2008
+}
+
+###
+
+DELETE http://localhost:5086/filmek/4
+Content-Type: application/json
+
+
+###
+
+GET http://localhost:5086/szineszek
+
+###
+
+GET http://localhost:5086/szineszek/2
+
+###
+
+POST http://localhost:5086/szineszek
+Content-Type: application/json
+
+{
+    "szinesz": "Jake Gyllenhaal"
+}
+
+###
+
+PUT http://localhost:5086/szineszek/2
+Content-Type: application/json
+
+{
+    "szinesz": "Leonardo DiCaprio"
+}
+
+###
+
+DELETE http://localhost:5086/szineszek/2
+Content-Type: application/json
+
+###
+
+GET http://localhost:5086/filmcast
