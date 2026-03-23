@@ -4,7 +4,7 @@ using FilmKatalogus.Api.Endpoints;
 
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddValidation();
 var app = builder.Build();
 
 

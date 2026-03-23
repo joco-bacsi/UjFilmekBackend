@@ -8,23 +8,23 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\bjozsef06\\.nuget\\packages\\": {},
+    "C:\\Users\\József\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\BackendVizsga\\FilmKatalogus.Api\\FilmKatalogus.Api.csproj",
+      "projectUniqueName": "D:\\Backend\\UjFilmekBackend\\FilmKatalogus.Api\\FilmKatalogus.Api.csproj",
       "projectName": "FilmKatalogus.Api",
-      "projectPath": "Z:\\BackendVizsga\\FilmKatalogus.Api\\FilmKatalogus.Api.csproj",
-      "packagesPath": "C:\\Users\\bjozsef06\\.nuget\\packages\\",
-      "outputPath": "Z:\\BackendVizsga\\FilmKatalogus.Api\\obj\\",
+      "projectPath": "D:\\Backend\\UjFilmekBackend\\FilmKatalogus.Api\\FilmKatalogus.Api.csproj",
+      "packagesPath": "C:\\Users\\József\\.nuget\\packages\\",
+      "outputPath": "D:\\Backend\\UjFilmekBackend\\FilmKatalogus.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\bjozsef06\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\József\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -51,7 +51,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -75,7 +75,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

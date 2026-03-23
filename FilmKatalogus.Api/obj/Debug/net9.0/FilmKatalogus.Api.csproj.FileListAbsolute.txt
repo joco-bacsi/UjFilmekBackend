@@ -27,3 +27,10 @@ Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.pdb
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.genruntimeconfig.cache
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\ref\FilmKatalogus.Api.dll
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.sourcelink.json
+D:\Backend\UjFilmekBackend\FilmKatalogus.Api\obj\Debug\net9.0\rpswa.dswa.cache.json
+D:\Backend\UjFilmekBackend\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.GeneratedMSBuildEditorConfig.editorconfig
+D:\Backend\UjFilmekBackend\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.AssemblyInfoInputs.cache
+D:\Backend\UjFilmekBackend\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.AssemblyInfo.cs
+D:\Backend\UjFilmekBackend\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.csproj.CoreCompileInputs.cache
+D:\Backend\UjFilmekBackend\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.MvcApplicationPartsAssemblyInfo.cache
+D:\Backend\UjFilmekBackend\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.sourcelink.json
