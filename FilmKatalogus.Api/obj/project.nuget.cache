@@ -28,5 +28,12 @@
     "C:\\Users\\bjozsef06\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\bjozsef06\\.nuget\\packages\\system.text.json\\9.0.14\\system.text.json.9.0.14.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file Z:\\BackendVizsga\\FilmKatalogus.Api\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
