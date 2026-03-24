@@ -1,8 +1,6 @@
 namespace FilmKatalogus.Api.Dtos;
 
-public record class Mufaj
-{
-    public int Id { get; set; }
-
-    public required string Name { get; set; }
-}
+public record class MufajDto(
+    int Id,
+    string Name
+);

@@ -9,8 +9,7 @@ public class Film
     public int MufajId { get; set; }
     public required int MegjelenesiDatum { get; set; }
     public TimeOnly Hossz { get; set; }
-    public Nyelv? Nyelv { get; set; }
-    public int NyelvId { get; set; }
+    public required string Nyelv { get; set; }
     public double ImDbErtekeles { get; set; }
     public double SajatErtekeles { get; set; }  
 
