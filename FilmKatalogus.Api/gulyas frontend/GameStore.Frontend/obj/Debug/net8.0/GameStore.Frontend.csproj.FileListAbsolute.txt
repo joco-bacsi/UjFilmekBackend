@@ -1,0 +1,152 @@
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\appsettings.json
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.staticwebassets.runtime.json
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.staticwebassets.endpoints.json
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.exe
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.deps.json
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.runtimeconfig.json
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.dll
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.pdb
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.AssemblyInfoInputs.cache
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.AssemblyInfo.cs
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.csproj.CoreCompileInputs.cache
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\scopedcss\bundle\GameStore.Frontend.styles.css
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\scopedcss\projectbundle\GameStore.Frontend.bundle.scp.css
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets\msbuild.GameStore.Frontend.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets\msbuild.GameStore.Frontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets\msbuild.build.GameStore.Frontend.props
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.GameStore.Frontend.props
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.GameStore.Frontend.props
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.dll
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\refint\GameStore.Frontend.dll
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.pdb
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.genruntimeconfig.cache
+C:\Users\gjozsef\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\ref\GameStore.Frontend.dll
+K:\13.A\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\appsettings.Development.json
+K:\13.A\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\appsettings.json
+K:\13.A\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.staticwebassets.endpoints.json
+K:\13.A\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.staticwebassets.runtime.json
+K:\13.A\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.exe
+K:\13.A\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.deps.json
+K:\13.A\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.runtimeconfig.json
+K:\13.A\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.dll
+K:\13.A\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.pdb
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.GeneratedMSBuildEditorConfig.editorconfig
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.AssemblyInfoInputs.cache
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.AssemblyInfo.cs
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.csproj.CoreCompileInputs.cache
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.MvcApplicationPartsAssemblyInfo.cache
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\scopedcss\bundle\GameStore.Frontend.styles.css
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\scopedcss\projectbundle\GameStore.Frontend.bundle.scp.css
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.json
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.development.json
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets\msbuild.GameStore.Frontend.Microsoft.AspNetCore.StaticWebAssets.props
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets\msbuild.GameStore.Frontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets\msbuild.build.GameStore.Frontend.props
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.GameStore.Frontend.props
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.GameStore.Frontend.props
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.pack.json
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.dll
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\refint\GameStore.Frontend.dll
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.pdb
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.genruntimeconfig.cache
+K:\13.A\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\ref\GameStore.Frontend.dll
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\appsettings.Development.json
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\appsettings.json
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.staticwebassets.runtime.json
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.staticwebassets.endpoints.json
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.exe
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.deps.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.runtimeconfig.json
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.dll
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.pdb
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\rpswa.dswa.cache.json
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.AssemblyInfoInputs.cache
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.AssemblyInfo.cs
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.csproj.CoreCompileInputs.cache
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.MvcApplicationPartsAssemblyInfo.cache
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\rjimswa.dswa.cache.json
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\scopedcss\bundle\GameStore.Frontend.styles.css
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\scopedcss\projectbundle\GameStore.Frontend.bundle.scp.css
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.json
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.json.cache
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.development.json
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.dll
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\refint\GameStore.Frontend.dll
+c:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.pdb
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.genruntimeconfig.cache
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete\GameStore.Frontend\obj\Debug\net8.0\ref\GameStore.Frontend.dll
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\bin\Debug\net8.0\appsettings.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.staticwebassets.endpoints.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.staticwebassets.runtime.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.exe
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.deps.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.runtimeconfig.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.dll
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.pdb
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.AssemblyInfoInputs.cache
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.AssemblyInfo.cs
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.csproj.CoreCompileInputs.cache
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\scopedcss\bundle\GameStore.Frontend.styles.css
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\scopedcss\projectbundle\GameStore.Frontend.bundle.scp.css
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.dll
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\refint\GameStore.Frontend.dll
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.pdb
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.genruntimeconfig.cache
+C:\Users\gjozsef.SZIKSZI\GameStore.Frontend\obj\Debug\net8.0\ref\GameStore.Frontend.dll
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\bin\Debug\net8.0\appsettings.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.staticwebassets.endpoints.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.staticwebassets.runtime.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.exe
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.deps.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.runtimeconfig.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.dll
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\bin\Debug\net8.0\GameStore.Frontend.pdb
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.AssemblyInfoInputs.cache
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.AssemblyInfo.cs
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.csproj.CoreCompileInputs.cache
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\scopedcss\bundle\GameStore.Frontend.styles.css
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\scopedcss\projectbundle\GameStore.Frontend.bundle.scp.css
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.dll
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\refint\GameStore.Frontend.dll
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.pdb
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\GameStore.Frontend.genruntimeconfig.cache
+C:\Users\gjozsef.SZIKSZI\Gamestore Complete MySql\GameStore.Frontend\obj\Debug\net8.0\ref\GameStore.Frontend.dll

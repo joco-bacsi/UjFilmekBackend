@@ -9,11 +9,17 @@ GET http://localhost:5086/filmek/4
 POST http://localhost:5086/filmek
 Content-Type: application/json
 
-{
-    "cim": "Inception",
+{   
     "rendezo": "Christopher Nolan",
-    "ev": 2010
+    "cim": "Inception",
+    "mufaj": "Sci-Fi",
+    "hossz": "02:28:00",
+    "nyelv": "Angol",
+    "megjelenesiDatum": "2010-07-16",
+    "imDbErtekeles": 8.8,
+    "SajatErtekeles": 9.0
 }
+
 
 ###
 
