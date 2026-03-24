@@ -1,6 +1,5 @@
 ﻿using FilmKatalogus.Api.Dtos;
 using FilmKatalogus.Api.Entities;
-using FilmKatalogus.Api.Models;
 
 namespace FilmKatalogus.Api.Mapping;
 

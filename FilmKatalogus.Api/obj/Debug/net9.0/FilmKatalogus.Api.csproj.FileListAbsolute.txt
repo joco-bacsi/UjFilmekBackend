@@ -42,7 +42,12 @@ Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\Microsoft.Extensions.Logging
 Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
 Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
 Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\Microsoft.OpenApi.dll
+Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\MinimalApis.Extensions.dll
+Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\MiniValidation.dll
 Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\Mono.TextTemplating.dll
+Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\MySqlConnector.dll
+Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
 Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\SQLitePCLRaw.batteries_v2.dll
 Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\SQLitePCLRaw.core.dll
 Z:\BackendVizsga\FilmKatalogus.Api\bin\Debug\net9.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -144,6 +149,7 @@ Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.GeneratedM
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.AssemblyInfoInputs.cache
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.AssemblyInfo.cs
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.csproj.CoreCompileInputs.cache
+Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.MvcApplicationPartsAssemblyInfo.cs
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.MvcApplicationPartsAssemblyInfo.cache
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.sourcelink.json
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\scopedcss\bundle\FilmKatalogus.Api.styles.css
@@ -162,4 +168,3 @@ Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\refint\FilmKatalogus.Api.dll
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.pdb
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.genruntimeconfig.cache
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\ref\FilmKatalogus.Api.dll
-Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.MvcApplicationPartsAssemblyInfo.cs
