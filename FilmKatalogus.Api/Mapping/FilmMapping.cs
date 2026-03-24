@@ -5,9 +5,9 @@ namespace FilmKatalogus.Api.Mapping;
 
 public static class FilmekMapping
 {
-    public static Filmek ToEntity(this FilmCreateDto filmek)
+    public static FilmekEntities ToEntity(this FilmCreateDto filmek)
     {
-        return new Filmek()
+        return new FilmekEntities()
         {
             Rendezo = filmek.Rendezo,
             Cim = filmek.Cim,
@@ -20,9 +20,9 @@ public static class FilmekMapping
         };
     }
 
-    public static Filmek ToEntity(this UpdateFilmDto filmek, int id)
+    public static FilmekEntities ToEntity(this UpdateFilmDto filmek, int id)
     {
-        return new Filmek()
+        return new FilmekEntities()
         {
             Id = id,
             Rendezo = filmek.Rendezo,
@@ -36,7 +36,7 @@ public static class FilmekMapping
         };
     }    
 
-    public static FilmekSummaryDto ToFilmekSummaryDto(this Filmek filmek)
+    public static FilmekSummaryDto ToFilmekSummaryDto(this FilmekEntities filmek)
     {
         return new(
             filmek.Id,
@@ -51,7 +51,7 @@ public static class FilmekMapping
         );
     }
 
-    public static FilmekDto ToFilmekDetailsDto(this Filmek filmek)
+    public static FilmekDto ToFilmekDetailsDto(this FilmekEntities filmek)
     {
         return new(
             filmek.Id,

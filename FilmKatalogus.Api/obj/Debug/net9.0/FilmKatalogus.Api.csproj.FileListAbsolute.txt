@@ -162,3 +162,4 @@ Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\refint\FilmKatalogus.Api.dll
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.pdb
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.genruntimeconfig.cache
 Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\ref\FilmKatalogus.Api.dll
+Z:\BackendVizsga\FilmKatalogus.Api\obj\Debug\net9.0\FilmKatalogus.Api.MvcApplicationPartsAssemblyInfo.cs

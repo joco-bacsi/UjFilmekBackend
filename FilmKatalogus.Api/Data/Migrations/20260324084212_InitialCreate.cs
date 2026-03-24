@@ -24,18 +24,6 @@ namespace FilmKatalogus.Api.Data.Migrations
                     table.PrimaryKey("PK_Mufajok", x => x.Id);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Nyelvek",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nev = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Nyelvek", x => x.Id);
-                });
 
             migrationBuilder.CreateTable(
                 name: "Filmek",
@@ -48,7 +36,7 @@ namespace FilmKatalogus.Api.Data.Migrations
                     MufajId = table.Column<int>(type: "INTEGER", nullable: false),
                     MegjelenesiDatum = table.Column<int>(type: "INTEGER", nullable: false),
                     Hossz = table.Column<TimeOnly>(type: "TEXT", nullable: false),
-                    NyelvId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Nyelv = table.Column<string>(type: "TEXT", nullable: false),
                     ImDbErtekeles = table.Column<double>(type: "REAL", nullable: false),
                     SajatErtekeles = table.Column<double>(type: "REAL", nullable: false)
                 },
@@ -61,12 +49,6 @@ namespace FilmKatalogus.Api.Data.Migrations
                         principalTable: "Mufajok",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Filmek_Nyelvek_NyelvId",
-                        column: x => x.NyelvId,
-                        principalTable: "Nyelvek",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -74,10 +56,6 @@ namespace FilmKatalogus.Api.Data.Migrations
                 table: "Filmek",
                 column: "MufajId");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Filmek_NyelvId",
-                table: "Filmek",
-                column: "NyelvId");
         }
 
         /// <inheritdoc />
@@ -89,8 +67,6 @@ namespace FilmKatalogus.Api.Data.Migrations
             migrationBuilder.DropTable(
                 name: "Mufajok");
 
-            migrationBuilder.DropTable(
-                name: "Nyelvek");
         }
     }
 }

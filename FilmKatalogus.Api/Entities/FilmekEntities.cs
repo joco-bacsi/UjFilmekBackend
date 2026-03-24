@@ -1,6 +1,6 @@
 ﻿namespace FilmKatalogus.Api.Entities;
 
-    public class Filmek
+    public class FilmekEntities
     {
         public int Id { get; set; }
         public string Rendezo { get; set; } = string.Empty;

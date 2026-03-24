@@ -74,22 +74,25 @@ namespace FilmKatalogus.Api.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Mufajok");
+                    b.HasData(
+                        new { Id = 1, Name = "Action" },
+            new { Id = 2, Name = "Adventure" },
+            new { Id = 3, Name = "Animated" },
+            new { Id = 4, Name = "Comedy" },
+            new { Id = 5, Name = "Drama" },
+            new { Id = 6, Name = "Fantasy" },
+            new { Id = 7, Name = "Historical" },
+            new { Id = 8, Name = "Horror" },
+            new { Id = 9, Name = "Melodrama" },
+            new { Id = 10, Name = "Musical" },
+            new { Id = 11, Name = "Noir" },
+            new { Id = 12, Name = "Romance" },
+            new { Id = 13, Name = "Science fiction" },
+            new { Id = 14, Name = "Thriller" },
+            new { Id = 15, Name = "Western" }
+                    );
                 });
 
-            modelBuilder.Entity("FilmKatalogus.Api.Models.Nyelv", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Nev")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Nyelvek");
-                });
 
             modelBuilder.Entity("FilmKatalogus.Api.Models.Film", b =>
                 {
@@ -99,15 +102,8 @@ namespace FilmKatalogus.Api.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FilmKatalogus.Api.Models.Nyelv", "Nyelv")
-                        .WithMany()
-                        .HasForeignKey("NyelvId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Mufaj");
 
-                    b.Navigation("Nyelv");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,7 +1,6 @@
 using FilmKatalogus.Api.Data;
 using FilmKatalogus.Api.Dtos;
 using FilmKatalogus.Api.Endpoints;
-using FilmKatalogus.Api.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +12,7 @@ var app = builder.Build();
 
 
 app.MapFilmekEndpoints();
-
+app.MapMufajEndpoints();
 
 
 app.Run();

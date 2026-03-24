@@ -1,6 +1,6 @@
-﻿namespace GameStore.Frontend.Models;
+﻿namespace FilmKatalogus.Api.Entities;
 
-public class Genre
+public class MufajEntities
 {
     public int Id { get; set; }
 
