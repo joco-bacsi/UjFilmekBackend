@@ -1,12 +1,13 @@
 using FilmKatalogus.Api.Data;
-using FilmKatalogus.Api.Dtos;
 using FilmKatalogus.Api.Endpoints;
+using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connsectionString = builder.Configuration.GetConnectionString("FilmKatalogusDb");
-builder.Services.AddSqlite<FilmKatalogusContext>(connsectionString);
+builder.Services.AddDbContext<FilmKatalogusContext>(options =>
+    options.UseMySql(connsectionString, ServerVersion.AutoDetect(connsectionString)));
 
 var app = builder.Build();
 

@@ -90,12 +90,12 @@ app.MapGet("/szineszek/{id}", (int id) =>
 //POST szinesz
 app.MapPost("/szineszek", (CreateSzineszekDto ujSzinesz) =>
 {
-    if(string.IsNullOrEmpty(ujSzinesz.szinesz))
+    if(string.IsNullOrEmpty(ujSzinesz.Name))
     {
         return Results.BadRequest("A színész neve nem lehet üres.");
     }
     int newId = szineszek.Max(s => s.Id) + 1;
-    var szinesz = new SzineszekDto(newId, ujSzinesz.szinesz);
+    var szinesz = new SzineszekDto(newId, ujSzinesz.Name);
     szineszek.Add(szinesz);
     return Results.CreatedAtRoute(GetSzineszById, new { id = newId }, szinesz);
 });
@@ -109,7 +109,7 @@ app.MapPut("/szineszek/{id}", (int id, UpdateSzineszekDto frissitettSzinesz) =>
         return Results.NotFound();
     }
     var index = szineszek.IndexOf(szinesz);
-    var updatedSzinesz = new SzineszekDto(id, frissitettSzinesz.szinesz);
+    var updatedSzinesz = new SzineszekDto(id, frissitettSzinesz.Name);
     szineszek[index] = updatedSzinesz;
     return Results.Ok(updatedSzinesz);
 });
