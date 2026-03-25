@@ -5,7 +5,7 @@ namespace FilmKatalogus.Api.Dtos;
 public record class FilmCreateDto(
     [Required]string Rendezo, 
     [Required]string Cim, 
-    [Required]string Mufaj, 
+    int MufajId,
     TimeOnly Hossz, 
     [Required]string Nyelv, 
     DateOnly MegjelenesiDatum,

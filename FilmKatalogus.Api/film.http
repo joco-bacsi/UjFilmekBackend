@@ -12,7 +12,7 @@ Content-Type: application/json
 {   
     "rendezo": "Christopher Nolan",
     "cim": "Inception",
-    "mufaj": "Sci-Fi",
+    "mufajId": 1,
     "hossz": "02:28:00",
     "nyelv": "Angol",
     "megjelenesiDatum": "2010-07-16",

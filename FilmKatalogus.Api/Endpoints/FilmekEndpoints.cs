@@ -1,5 +1,9 @@
 using System;
+using FilmKatalogus.Api.Data;
 using FilmKatalogus.Api.Dtos;
+using Microsoft.EntityFrameworkCore;
+using FilmKatalogus.Api.Entities;
+using FilmKatalogus.Api.Mapping;
 
 namespace FilmKatalogus.Api.Endpoints;
 
@@ -8,14 +12,14 @@ public static class FilmekEndpoints
     const string GetFilmById = "GetFilmById";
 const string GetSzineszById = "GetSzineszById";
 const string GetFilmCastById = "GetFilmCastById";
-    private static readonly List<FilmekDto> filmek = new List<FilmekDto>
+    /*private static readonly List<FilmekDto> filmek = new List<FilmekDto>
     {
         new FilmekDto(1, "Christopher Nolan", "Inception", "Sci-Fi", new TimeOnly(2, 28), "English", new DateOnly(2010, 7, 16), 8.8, 9.0),
         new FilmekDto(2, "Quentin Tarantino", "Pulp Fiction", "Crime", new TimeOnly(2, 34), "English", new DateOnly(1994, 10, 14), 8.9, 9.5),
         new FilmekDto(3, "Steven Spielberg", "Jurassic Park", "Adventure", new TimeOnly(2, 7), "English", new DateOnly(1993, 6, 11), 8.1, 8.5)
-    };
-
-    private static readonly List<SzineszekDto> szineszek = new List<SzineszekDto>
+    };*/
+    
+        private static readonly List<SzineszekDto> szineszek = new List<SzineszekDto>
     {
         new SzineszekDto(1, "Leonardo DiCaprio"),
         new SzineszekDto(2, "Samuel L. Jackson"),
@@ -31,51 +35,70 @@ const string GetFilmCastById = "GetFilmCastById";
 
     public static void MapFilmekEndpoints(this WebApplication app)
     {
-        //GetAll
-app.MapGet("/filmek", () => filmek);
+        var group = app.MapGroup("filmek")
+                       .WithParameterValidation();
+
+        // GET /games
+        group.MapGet("/", async (FilmKatalogusContext dbContext) => 
+        await dbContext.Filmek.Include(f => f.Mufaj).ToListAsync());
 
 //GetById
-app.MapGet("/filmek/{id}", (int id) =>
-{
-    var film = filmek.FirstOrDefault(f => f.Id == id);
-    return film is not null ? Results.Ok(film) : Results.NotFound();
-}).WithName(GetFilmById);
+group.MapGet("/{id}", async (int id, FilmKatalogusContext dbContext) =>
+        {
+            FilmekEntities? film = await dbContext.Filmek.FindAsync(id);
+
+            return film is null ? 
+                Results.NotFound() : Results.Ok(film);
+        })
+        .WithName(GetFilmById);
 //Post
-app.MapPost("/filmek", (FilmCreateDto ujFilm) =>
-{
-    if( string.IsNullOrEmpty(ujFilm.Rendezo) || string.IsNullOrEmpty(ujFilm.Cim) || string.IsNullOrEmpty(ujFilm.Mufaj) || string.IsNullOrEmpty(ujFilm.Nyelv))
-    {
-        return Results.BadRequest("Minden mező kitöltése kötelező.");
-    }
-    int newId = filmek.Max(f => f.Id) + 1;
-    var film = new FilmekDto(newId, ujFilm.Rendezo, ujFilm.Cim, ujFilm.Mufaj, ujFilm.Hossz, ujFilm.Nyelv, ujFilm.MegjelenesiDatum, ujFilm.ImDbErtekeles, ujFilm.SajatErtekeles);
-    filmek.Add(film);
-    return Results.CreatedAtRoute(GetFilmById, new { id = newId }, film);
-});
+group.MapPost("/", async (FilmCreateDto ujFilm, FilmKatalogusContext dbContext) =>
+        {
+            FilmekEntities film = new FilmekEntities
+            {
+                Rendezo = ujFilm.Rendezo,
+                Cim = ujFilm.Cim,
+                MufajId = ujFilm.MufajId,
+                Hossz = ujFilm.Hossz,
+                Nyelv = ujFilm.Nyelv,
+                MegjelenesiDatum = ujFilm.MegjelenesiDatum,
+                ImDbErtekeles = ujFilm.ImDbErtekeles,
+                SajatErtekeles = ujFilm.SajatErtekeles
+            };
+
+            dbContext.Filmek.Add(film);
+            await dbContext.SaveChangesAsync();
+
+            return Results.CreatedAtRoute(
+                GetFilmById, 
+                new { id = film.Id }, 
+                film);
+        });
 //Put
-app.MapPut("/filmek/{id}", (int id, UpdateFilmDto frissitettFilm) =>
-{
-    var film = filmek.FirstOrDefault(f => f.Id == id);
-    if (film is null)
-    {
-        return Results.NotFound();
-    }
-    var index = filmek.IndexOf(film);
-    var updatedFilm = new FilmekDto(id, frissitettFilm.Rendezo, frissitettFilm.Cim, frissitettFilm.Mufaj, frissitettFilm.Hossz, frissitettFilm.Nyelv, frissitettFilm.MegjelenesiDatum, frissitettFilm.ImDbErtekeles, frissitettFilm.SajatErtekeles);
-    filmek[index] = updatedFilm;
-    return Results.Ok(updatedFilm);
-});
+group.MapPut("/{id}", async (int id, UpdateFilmDto updatedFilm, FilmKatalogusContext dbContext) =>
+        {
+            var existingFilm = await dbContext.Filmek.FindAsync(id);
+
+            if (existingFilm is null)
+            {
+                return Results.NotFound();
+            }
+
+            dbContext.Entry(existingFilm).CurrentValues.SetValues(updatedFilm.ToEntity(id));
+
+            await dbContext.SaveChangesAsync();
+
+            return Results.NoContent();
+        });
 //delete
-app.MapDelete("/filmek/{id}", (int id) =>
-{
-    var film = filmek.FirstOrDefault(f => f.Id == id);
-    if (film is null)
-    {
-        return Results.NotFound();
-    }
-    filmek.Remove(film);
-    return Results.NoContent();
-});
+group.MapDelete("/{id}", async (int id, FilmKatalogusContext dbContext) =>
+        {
+            await dbContext.Filmek
+                     .Where(film => film.Id == id)
+                     .ExecuteDeleteAsync();
+
+            return Results.NoContent();
+        });
 
 //GET all szinesz
 app.MapGet("/szineszek", () => szineszek);
@@ -135,5 +158,29 @@ app.MapGet("/filmcast/{id}", (int id) =>
     var filmcast = cast.FirstOrDefault(fc => fc.SzineszId == id);
     return filmcast is not null ? Results.Ok(filmcast) : Results.NotFound();
 }).WithName(GetFilmCastById);
+//POST filmcast
+app.MapPost("/filmcast", (CreateFilmCastDto ujFilmCast) =>
+{
+    if(string.IsNullOrEmpty(ujFilmCast.filmCim))
+    {
+        return Results.BadRequest("A film címe nem lehet üres.");
+    }
+    var filmcast = new FilmCastDto(ujFilmCast.SzineszId, ujFilmCast.filmCim);
+    cast.Add(filmcast);
+    return Results.CreatedAtRoute(GetFilmCastById, new { id = ujFilmCast.SzineszId }, filmcast);
+});
+//PUT filmcast
+app.MapPut("/filmcast/{id}", (int id, UpdateFilmCastDto frissitettFilmCast) =>
+{
+    var filmcast = cast.FirstOrDefault(fc => fc.SzineszId == id);
+    if (filmcast is null)
+    {
+        return Results.NotFound();
+    }
+    var index = cast.IndexOf(filmcast);
+    var updatedFilmCast = new FilmCastDto(id, frissitettFilmCast.filmCim);
+    cast[index] = updatedFilmCast;
+    return Results.Ok(updatedFilmCast);
+});
 
 }}
