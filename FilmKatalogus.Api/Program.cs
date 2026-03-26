@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connsectionString = builder.Configuration.GetConnectionString("FilmKatalogusDb");
+var connsectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<FilmKatalogusContext>(options =>
     options.UseMySql(connsectionString, ServerVersion.AutoDetect(connsectionString)));
 

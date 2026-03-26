@@ -1,6 +1,15 @@
 GET http://localhost:5086/filmek
 
 ###
+GET http://localhost:5086/szineszek
+
+###
+GET http://localhost:5086/film_cast
+
+###
+GET http://localhost:5086/mufajok
+
+###
 
 GET http://localhost:5086/filmek/4
 
