@@ -20,48 +20,40 @@ namespace FilmKatalogus.Api.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.14");
 
-            modelBuilder.Entity("FilmKatalogus.Api.Models.Film", b =>
+            modelBuilder.Entity("FilmKatalogus.Api.Entities.Film", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Cim")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<TimeOnly>("Hossz")
-                        .HasColumnType("TEXT");
-
-                    b.Property<double>("ImDbErtekeles")
-                        .HasColumnType("REAL");
-
-                    b.Property<int>("MegjelenesiDatum")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("MufajId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("NyelvId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Rendezo")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Cim")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+                    b.Property<int>("MufajId")
+                        .HasColumnType("INTEGER");
+                    b.Property<TimeOnly>("Hossz")
+                        .HasColumnType("TEXT");
+                    b.Property<string>("Nyelv")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+                    b.Property<DateOnly>("MegjelenesiDatum")
+                        .HasColumnType("TEXT");
+                    b.Property<double>("ImDbErtekeles")
+                        .HasColumnType("REAL");
                     b.Property<double>("SajatErtekeles")
                         .HasColumnType("REAL");
-
                     b.HasKey("Id");
 
                     b.HasIndex("MufajId");
 
-                    b.HasIndex("NyelvId");
-
                     b.ToTable("Filmek");
                 });
 
-            modelBuilder.Entity("FilmKatalogus.Api.Models.Mufaj", b =>
+            modelBuilder.Entity("FilmKatalogus.Api.Entities.Mufaj", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -93,16 +85,70 @@ namespace FilmKatalogus.Api.Data.Migrations
                     );
                 });
 
-
-            modelBuilder.Entity("FilmKatalogus.Api.Models.Film", b =>
+                modelBuilder.Entity("FilmKatalogus.Api.Entities.Szineszek", b =>
                 {
-                    b.HasOne("FilmKatalogus.Api.Models.Mufaj", "Mufaj")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Szineszek");
+                });
+                modelBuilder.Entity("FilmKatalogus.Api.Entities.FilmCast", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("SzineszId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("filmCim")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FilmCast");
+                });
+
+
+            modelBuilder.Entity("FilmKatalogus.Api.Entities.Film", b =>
+                {
+                    b.HasOne("FilmKatalogus.Api.Entities.Mufaj", "Mufaj")
                         .WithMany()
                         .HasForeignKey("MufajId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Mufaj");
+
+                });
+            modelBuilder.Entity("FilmKatalogus.Api.Entities.FilmCast", b =>
+                {
+                    b.HasOne("FilmKatalogus.Api.Entities.Szineszek", "Szineszek")
+                        .WithMany()
+                        .HasForeignKey("SzineszId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Szineszek");
+
+                });
+                modelBuilder.Entity("FilmKatalogus.Api.Entities.FilmCast", b =>
+                {
+                    b.HasOne("FilmKatalogus.Api.Entities.Film", "Film")
+                        .WithMany()
+                        .HasForeignKey("filmCim")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Film");
 
                 });
 #pragma warning restore 612, 618

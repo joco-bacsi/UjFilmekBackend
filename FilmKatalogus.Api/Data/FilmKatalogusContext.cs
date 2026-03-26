@@ -6,6 +6,8 @@ namespace FilmKatalogus.Api.Data;
 public class FilmKatalogusContext(DbContextOptions<FilmKatalogusContext> options) : DbContext(options)
 {
     public DbSet<Entities.FilmekEntities> Filmek => Set<Entities.FilmekEntities>();
+    public DbSet<Entities.SzineszekEntities> Szineszek => Set<Entities.SzineszekEntities>();
+    public DbSet<Entities.FilmCastEntities> FilmCast => Set<Entities.FilmCastEntities>();
     public DbSet<Entities.MufajEntities> Mufajok => Set<Entities.MufajEntities>();
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

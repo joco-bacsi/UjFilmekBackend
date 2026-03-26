@@ -53,8 +53,6 @@ namespace FilmKatalogus.Api.Data.Migrations
 
                     b.HasIndex("MufajId");
 
-                    b.HasIndex("NyelvId");
-
                     b.ToTable("Filmek");
                 });
 

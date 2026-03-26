@@ -8,6 +8,7 @@ public static class FilmCastMapping
     {
         return new FilmCastEntities
         {
+            Id = filmCast.Id,
             SzineszId = filmCast.SzineszId,
             filmCim = filmCast.filmCim
         };
@@ -16,20 +17,22 @@ public static class FilmCastMapping
     {
         return new FilmCastEntities
         {
+            Id = filmCast.Id,
             SzineszId = filmCast.SzineszId,
             filmCim = filmCast.filmCim
         };
     }
-    public static FilmCastEntities ToEntity(this UpdateFilmCastDto filmCast)
+    public static FilmCastEntities ToEntity(this UpdateFilmCastDto filmCast, int id)
     {
         return new FilmCastEntities
         {
+            Id = id,
             SzineszId = filmCast.SzineszId,
             filmCim = filmCast.filmCim
         };
     }
     public static FilmCastSummaryDto ToSummaryDto(this FilmCastEntities filmCast)
     {
-        return new FilmCastSummaryDto(filmCast.SzineszId, filmCast.filmCim);
+        return new FilmCastSummaryDto(filmCast.Id, filmCast.SzineszId, filmCast.filmCim);
     }
 }

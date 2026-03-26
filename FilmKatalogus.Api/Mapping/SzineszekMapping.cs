@@ -22,6 +22,14 @@ public static class SzineszekMapping
             Name = updateSzineszekDto.Name
         };
     }
+    static public SzineszekEntities ToEntity(this UpdateSzineszekDto updateSzineszekDto, int id)
+    {
+        return new SzineszekEntities
+        {
+            Id = id,
+            Name = updateSzineszekDto.Name
+        };
+    }
     static public SzineszekDto ToDto(this SzineszekEntities szineszek)
     {
         return new SzineszekDto(szineszek.Id, szineszek.Name);

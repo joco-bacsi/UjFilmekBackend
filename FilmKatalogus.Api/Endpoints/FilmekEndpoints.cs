@@ -12,26 +12,6 @@ public static class FilmekEndpoints
     const string GetFilmById = "GetFilmById";
 const string GetSzineszById = "GetSzineszById";
 const string GetFilmCastById = "GetFilmCastById";
-    /*private static readonly List<FilmekDto> filmek = new List<FilmekDto>
-    {
-        new FilmekDto(1, "Christopher Nolan", "Inception", "Sci-Fi", new TimeOnly(2, 28), "English", new DateOnly(2010, 7, 16), 8.8, 9.0),
-        new FilmekDto(2, "Quentin Tarantino", "Pulp Fiction", "Crime", new TimeOnly(2, 34), "English", new DateOnly(1994, 10, 14), 8.9, 9.5),
-        new FilmekDto(3, "Steven Spielberg", "Jurassic Park", "Adventure", new TimeOnly(2, 7), "English", new DateOnly(1993, 6, 11), 8.1, 8.5)
-    };*/
-    
-        private static readonly List<SzineszekDto> szineszek = new List<SzineszekDto>
-    {
-        new SzineszekDto(1, "Leonardo DiCaprio"),
-        new SzineszekDto(2, "Samuel L. Jackson"),
-        new SzineszekDto(3, "Jeff Goldblum")
-    };
-
-    private static readonly List<FilmCastDto> cast = new List<FilmCastDto>
-    {
-        new FilmCastDto(1, "Inception"), // Leonardo DiCaprio in Inception
-        new FilmCastDto(2, "Pulp Fiction"), // Samuel L. Jackson in Pulp Fiction
-        new FilmCastDto(3, "Jurassic Park")  // Jeff Goldblum in Jurassic Park
-    };
 
     public static void MapFilmekEndpoints(this WebApplication app)
     {
@@ -101,86 +81,113 @@ group.MapDelete("/{id}", async (int id, FilmKatalogusContext dbContext) =>
         });
 
 //GET all szinesz
-app.MapGet("/szineszek", () => szineszek);
+var szinesz = app.MapGroup("szineszek")
+                       .WithParameterValidation();
+
+        // GET /games
+        szinesz.MapGet("/", async (FilmKatalogusContext dbContext) => 
+        await dbContext.Szineszek.ToListAsync());
 
 //GET szinesz by id
-app.MapGet("/szineszek/{id}", (int id) =>
-{
-    var szinesz = szineszek.FirstOrDefault(s => s.Id == id);
-    return szinesz is not null ? Results.Ok(szinesz) : Results.NotFound();
-}).WithName(GetSzineszById);
+szinesz.MapGet("/{id}", async (int id, FilmKatalogusContext dbContext) =>
+        {
+            SzineszekEntities? szinesz = await dbContext.Szineszek.FindAsync(id);
+
+            return szinesz is null ? 
+                Results.NotFound() : Results.Ok(szinesz);
+        })
+        .WithName(GetSzineszById);
 
 //POST szinesz
-app.MapPost("/szineszek", (CreateSzineszekDto ujSzinesz) =>
-{
-    if(string.IsNullOrEmpty(ujSzinesz.Name))
-    {
-        return Results.BadRequest("A színész neve nem lehet üres.");
-    }
-    int newId = szineszek.Max(s => s.Id) + 1;
-    var szinesz = new SzineszekDto(newId, ujSzinesz.Name);
-    szineszek.Add(szinesz);
-    return Results.CreatedAtRoute(GetSzineszById, new { id = newId }, szinesz);
-});
+szinesz.MapPost("/", async (CreateSzineszekDto ujSzinesz, FilmKatalogusContext dbContext) =>
+        {
+            SzineszekEntities szinesz = new SzineszekEntities
+            {
+                Name = ujSzinesz.Name
+            };
+
+            dbContext.Szineszek.Add(szinesz);
+            await dbContext.SaveChangesAsync();
+
+            return Results.CreatedAtRoute(
+                GetSzineszById,
+                new { id = szinesz.Id },
+                szinesz);
+        });
 
 //PUT szinesz
-app.MapPut("/szineszek/{id}", (int id, UpdateSzineszekDto frissitettSzinesz) =>
+szinesz.MapPut("/", async (int id, UpdateSzineszekDto frissitettSzinesz, FilmKatalogusContext dbContext) =>
 {
-    var szinesz = szineszek.FirstOrDefault(s => s.Id == id);
-    if (szinesz is null)
-    {
-        return Results.NotFound();
-    }
-    var index = szineszek.IndexOf(szinesz);
-    var updatedSzinesz = new SzineszekDto(id, frissitettSzinesz.Name);
-    szineszek[index] = updatedSzinesz;
-    return Results.Ok(updatedSzinesz);
-});
+    var existingSzinesz = await dbContext.Szineszek.FindAsync(id);
 
-//DELETE szinesz
-app.MapDelete("/szineszek/{id}", (int id) =>
-{
-    var szinesz = szineszek.FirstOrDefault(s => s.Id == id);
-    if (szinesz is null)
+    if (existingSzinesz is null)
     {
         return Results.NotFound();
     }
-    szineszek.Remove(szinesz);
+
+    dbContext.Entry(existingSzinesz).CurrentValues.SetValues(frissitettSzinesz.ToEntity(id));
+
+    await dbContext.SaveChangesAsync();
+
     return Results.NoContent();
 });
 
+//DELETE szinesz
+szinesz.MapDelete("/{id}", async (int id, FilmKatalogusContext dbContext) =>
+        {
+            await dbContext.Szineszek
+                     .Where(szinesz => szinesz.Id == id)
+                     .ExecuteDeleteAsync();
+
+            return Results.NoContent();
+        });
+
 //GET filmcast
-app.MapGet("/filmcast", () => cast);
+var cast = app.MapGroup("filmcast")
+                       .WithParameterValidation();
+
 
 //GET filmcast by id
-app.MapGet("/filmcast/{id}", (int id) =>
-{
-    var filmcast = cast.FirstOrDefault(fc => fc.SzineszId == id);
-    return filmcast is not null ? Results.Ok(filmcast) : Results.NotFound();
-}).WithName(GetFilmCastById);
+cast.MapGet("/{id}", async (int id, FilmKatalogusContext dbContext) =>
+        {
+            FilmCastEntities? filmcast = await dbContext.FilmCast.FindAsync(id);
+
+            return filmcast is null ? 
+                Results.NotFound() : Results.Ok(filmcast);
+        })
+        .WithName(GetFilmCastById);
 //POST filmcast
-app.MapPost("/filmcast", (CreateFilmCastDto ujFilmCast) =>
-{
-    if(string.IsNullOrEmpty(ujFilmCast.filmCim))
-    {
-        return Results.BadRequest("A film címe nem lehet üres.");
-    }
-    var filmcast = new FilmCastDto(ujFilmCast.SzineszId, ujFilmCast.filmCim);
-    cast.Add(filmcast);
-    return Results.CreatedAtRoute(GetFilmCastById, new { id = ujFilmCast.SzineszId }, filmcast);
-});
+cast.MapPost("/", async (CreateFilmCastDto ujFilmCast, FilmKatalogusContext dbContext) =>
+        {
+            FilmCastEntities filmcast = new FilmCastEntities
+            {
+                SzineszId = ujFilmCast.SzineszId,
+                filmCim = ujFilmCast.filmCim
+            };
+
+            dbContext.FilmCast.Add(filmcast);
+            await dbContext.SaveChangesAsync();
+
+            return Results.CreatedAtRoute(
+                GetFilmCastById,
+                new { id = filmcast.Id },
+                filmcast);
+        });
 //PUT filmcast
-app.MapPut("/filmcast/{id}", (int id, UpdateFilmCastDto frissitettFilmCast) =>
+cast.MapPut("/", async (int id, UpdateFilmCastDto frissitettFilmCast, FilmKatalogusContext dbContext) =>
 {
-    var filmcast = cast.FirstOrDefault(fc => fc.SzineszId == id);
-    if (filmcast is null)
+    var existingFilmCast = await dbContext.FilmCast.FindAsync(id);
+
+    if (existingFilmCast is null)
     {
         return Results.NotFound();
     }
-    var index = cast.IndexOf(filmcast);
-    var updatedFilmCast = new FilmCastDto(id, frissitettFilmCast.filmCim);
-    cast[index] = updatedFilmCast;
-    return Results.Ok(updatedFilmCast);
+
+    dbContext.Entry(existingFilmCast).CurrentValues.SetValues(frissitettFilmCast.ToEntity(id));
+
+    await dbContext.SaveChangesAsync();
+
+    return Results.NoContent();
 });
 
 }}

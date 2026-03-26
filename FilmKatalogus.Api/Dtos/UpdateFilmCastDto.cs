@@ -1,4 +1,4 @@
 namespace FilmKatalogus.Api.Dtos
 {
-    public record class UpdateFilmCastDto(int SzineszId, string filmCim);
+    public record class UpdateFilmCastDto(int Id, int SzineszId, string filmCim);
 }
