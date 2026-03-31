@@ -3,21 +3,11 @@ using FilmKatalogus.Api.Entities;
 
 namespace FilmKatalogus.Api.Mapping;
 public static class FilmCastMapping
-{
-    public static FilmCastEntities ToDto(this FilmCastEntities filmCast)
-    {
-        return new FilmCastEntities
-        {
-            Id = filmCast.Id,
-            SzineszId = filmCast.SzineszId,
-            filmCim = filmCast.filmCim
-        };
-    }
+{  
     public static FilmCastEntities ToEntity(this CreateFilmCastDto filmCast)
     {
         return new FilmCastEntities
-        {
-            Id = filmCast.Id,
+        {            
             SzineszId = filmCast.SzineszId,
             filmCim = filmCast.filmCim
         };
@@ -33,6 +23,6 @@ public static class FilmCastMapping
     }
     public static FilmCastSummaryDto ToSummaryDto(this FilmCastEntities filmCast)
     {
-        return new FilmCastSummaryDto(filmCast.Id, filmCast.SzineszId, filmCast.filmCim);
+        return new (filmCast.Id, filmCast.SzineszId, filmCast.filmCim);
     }
 }
