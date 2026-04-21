@@ -165,7 +165,7 @@ public static class FilmekEndpoints
                     FilmCastEntities filmcast = new FilmCastEntities
                     {
                         SzineszId = ujFilmCast.SzineszId,
-                        filmCim = ujFilmCast.filmCim
+                        filmId = ujFilmCast.filmId
                     };
 
                     dbContext.FilmCast.Add(filmcast);
