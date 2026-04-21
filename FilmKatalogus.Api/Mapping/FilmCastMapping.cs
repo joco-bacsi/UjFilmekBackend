@@ -9,7 +9,7 @@ public static class FilmCastMapping
         return new FilmCastEntities
         {            
             SzineszId = filmCast.SzineszId,
-            filmId = filmCast.filmId
+            filmCim = filmCast.filmCim
         };
     }
     public static FilmCastEntities ToEntity(this UpdateFilmCastDto filmCast, int id)
@@ -18,11 +18,11 @@ public static class FilmCastMapping
         {
             Id = id,
             SzineszId = filmCast.SzineszId,
-            filmId = filmCast.filmId
+            filmCim = filmCast.filmCim
         };
     }
     public static FilmCastSummaryDto ToSummaryDto(this FilmCastEntities filmCast)
     {
-        return new (filmCast.Id, filmCast.SzineszId, filmCast.filmId);
+        return new (filmCast.Id, filmCast.SzineszId, filmCast.filmCim);
     }
 }

@@ -2,4 +2,4 @@ using System;
 
 namespace FilmKatalogus.Api.Dtos;
 
-public record class CreateFilmCastDto(int Id, int SzineszId, int filmId);
+public record class CreateFilmCastDto(int Id, int SzineszId, int filmCim);

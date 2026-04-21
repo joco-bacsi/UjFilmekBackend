@@ -172,9 +172,17 @@ else
         ArgumentNullException.ThrowIfNull(film);
         film.Hossz = new TimeOnly(hours, minutes);
         
-        await filmekClient.AddFilmAsync(film);
-
         
+
+         if (Id is null)
+        {
+            await filmekClient.AddFilmAsync(film);
+        }
+        else
+        {
+            film.Id = Id.Value;
+            await filmekClient.UpdateFilmAsync(film);
+        }
      
         NavigationManager.NavigateTo("/filmek");
     }

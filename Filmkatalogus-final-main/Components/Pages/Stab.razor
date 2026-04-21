@@ -109,9 +109,10 @@ else
                         <p  style="border: #000000;" id="nyelv">@film.Nyelv</p>
                         <hr />
                     <label for="szereplok" class="form-label">Szereplők:</label>
-                    <p  style="border: #000000;" id="szereplok">@foreach (var fc in film_cast)
+                    <p  style="border: #000000;" id="szereplok">
+                        @foreach (var fc in film_cast)
                             {
-                                if (fc.filmCim.Equals(film.Cim))
+                                if (fc.filmCim == film.Id)
                                     foreach (var szinesz in szineszek)
                                         if (szinesz.Id == fc.SzineszId)
                                     {
