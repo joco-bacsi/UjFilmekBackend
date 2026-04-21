@@ -1,0 +1,181 @@
+﻿@page "/editFilm"
+@page "/editFilm/{id:int}"
+@attribute [StreamRendering]
+
+@rendermode InteractiveServer
+
+@inject NavigationManager NavigationManager
+@inject FilmekClient filmekClient
+
+
+<PageTitle>@title</PageTitle>
+<h3>Film szerkesztése</h3>
+<style>
+    h3 {
+    color: white;
+    }
+
+    body{
+    background-image: url('chaplin.jpg');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    .table {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: rgb(0, 0, 0);
+    border: 2px solid #fff;
+    border-collapse: collapse;
+}
+
+/* fejléc */
+.table thead th {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: rgb(0, 0, 0);
+    border: 2px solid white;
+    padding: 10px;
+}
+
+/* sorok */
+.table tbody td {
+    background-color: rgba(255, 253, 253, 0.4);
+    color: rgb(0, 0, 0);
+    border: 2px solid white;
+    padding: 10px;
+}
+
+/* hover effekt (nagyon dob rajta) */
+.table tbody tr:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+/* opcionális: zebra */
+.table tbody tr:nth-child(even) td {
+    background-color: rgb(255, 255, 255);
+}
+.mb-3 {
+    color: rgb(255, 255, 255);
+}   
+.btn btn-secondary {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    border: 2px solid white;
+}   
+.btn btn-primary {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    border: 2px solid white;
+}
+</style>
+@if (film is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4" style="border: 3px solid rgb(0, 0, 0); padding: 10px; background-color: rgba(0, 0, 0, 0.7); color: rgb(255, 255, 255);">
+            <EditForm Model="@film" FormName="editFilm" OnValidSubmit="HandleSubmitAsync" Enhance >
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class="mb-3">
+                    <label for="name" class="form-label">Rendező:</label>
+                    <InputText id="name" @bind-Value="film.Rendezo" class="form-control" />
+                    <ValidationMessage For="() => film.Rendezo" />
+                </div>
+                <div class="mb-3">
+                    <label for="genre" class="form-label">Cím:</label>
+                    <InputText id="name" @bind-Value="film.Cim" class="form-control" />
+                    <ValidationMessage For="() => film.Cim" />
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">MűfajId:</label>
+                    <InputNumber id="price" @bind-Value="film.MufajId" @bind-Value:format="F2"
+                                 class="form-control text-end" />
+                    <ValidationMessage For="() => film.MufajId" />
+                </div>
+                <div class="mb-3">
+                    <label for="releaseDate" class="form-label">Hossz:</label>
+                    <input type="time" id="releaseDate" value="@hours:@minutes"  class="form-control" />
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="releaseDate" class="form-label">Nyelv:</label>
+                    <InputText id="name" @bind-Value="film.Nyelv" class="form-control" />
+                    <ValidationMessage For="() => film.Nyelv" />
+                </div>
+                <div class="mb-3">
+                    <label for="releaseDate" class="form-label">Megjelenési dátuma:</label>
+                    <InputDate id="releaseDate" @bind-Value="film.MegjelenesiDatum" class="form-control" />
+                </div>
+            
+                <div class="mb-3">
+                    <label for="price" class="form-label">imDbÉrtékelés:</label>
+                    <InputNumber id="price" @bind-Value="film.ImDbErtekeles" @bind-Value:format="F2"
+                                 class="form-control text-end" />
+                    <ValidationMessage For="() => film.ImDbErtekeles" />
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Saját Értékelés:</label>
+                    <InputNumber id="price" @bind-Value="film.SajatErtekeles" @bind-Value:format="F2"
+                                 class="form-control text-end" />
+                    <ValidationMessage For="() => film.SajatErtekeles" />
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Mentés</button>
+                <a role="button" class="btn btn-secondary" href="/Filmek">Mégsem</a>
+            </EditForm>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    [SupplyParameterFromForm]
+    private FilmekDetails? film { get; set; }
+    int hours = 0;
+    int minutes = 0;
+    private string title = string.Empty;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (film is not null)
+        {
+            return;
+        }
+
+        if (Id is not null)
+        {
+            film = await filmekClient.GetFilmAsync(Id.Value);
+            title = $"Edit {film.Cim}";
+            hours = film.Hossz.Hour;
+            minutes = film.Hossz.Minute;
+        }
+        else
+        {
+            film = new()
+            {
+                Cim = string.Empty,
+                Rendezo = string.Empty,
+                Nyelv = string.Empty
+            };
+            
+            title = "New Film";
+        }
+    }
+
+    
+
+    private async Task HandleSubmitAsync()
+    {
+        ArgumentNullException.ThrowIfNull(film);
+        film.Hossz = new TimeOnly(hours, minutes);
+        
+        await filmekClient.AddFilmAsync(film);
+
+        
+     
+        NavigationManager.NavigateTo("/filmek");
+    }
+}

@@ -1,0 +1,182 @@
+﻿@page "/stab/{id:int}"
+@attribute [StreamRendering]
+
+@rendermode InteractiveServer
+
+@inject NavigationManager NavigationManager
+@inject FilmekClient filmekClient
+@inject MufajClient MufajClient
+@inject SzineszekClient SzineszekClient
+@inject Film_castClient Film_castClient
+
+
+<PageTitle>@title</PageTitle>
+<h3>@title</h3>
+<style>
+    .form-label {
+    border: #000000;
+    }
+
+     h3 {
+    color: white;
+    
+    }
+
+    body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+    background-image: url('chaplin.jpg');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    .table {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: rgb(0, 0, 0);
+    border: 2px solid #fff;
+    border-collapse: collapse;
+}
+
+/* fejléc */
+.table thead th {
+    background-color: rgb(0, 0, 0, );
+    color: rgb(0, 0, 0);
+    border: 10px solid rgb(0, 0, 0);
+    padding: 10px;
+}
+
+/* sorok */
+.table tbody td {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 10px solid rgb(0, 0, 0);
+    padding: 10px;
+
+}
+
+/* hover effekt (nagyon dob rajta) */
+.table tbody tr:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+/* opcionális: zebra */
+.table tbody tr:nth-child(even) td {
+    background-color: rgb(0, 0, 0);
+}
+.mb-3 {
+    color: rgb(0, 0, 0);
+    border: 10px solid rgb(0, 0, 0);
+
+}   
+.btn btn-secondary {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    border: 2px solid white;
+}   
+.btn btn-primary {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    border: 2px solid white;
+}
+
+}
+</style>
+@if (film is null || mufajok is null || szineszek is null || film_cast is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+          
+                
+                <div class="mb-3" style="border: 3px solid rgb(0, 0, 0); padding: 10px; background-color: rgba(0, 0, 0, 0.7); color: rgb(255, 255, 255);">
+                    
+                        <label for="cim" class="form-label">Cím:</label>
+                        <p style="border: #000000;" id="cim">@film.Cim</p> 
+                        <hr />
+                        <label for="rendezo" class="form-label">Rendező:</label>
+                        <p style="border: #000000; id="rendezo">@film.Rendezo
+                        </p>
+                        <hr />
+                        <label for="mufaj" class="form-label">Műfaj:</label>
+                        <p  style="border: #000000;id="mufaj">@mufajok.FirstOrDefault(m => m.Id == film.MufajId)?.Name</p>
+                        <hr />
+                        <label for="hossz" class="form-label">Hossz:</label>
+                        <p  style="border: #000000;" id="hossz">@film.Hossz
+                        </p><hr />
+                       <label for="nyelv" class="form-label">Nyelv:</label>
+                        <p  style="border: #000000;" id="nyelv">@film.Nyelv</p>
+                        <hr />
+                    <label for="szereplok" class="form-label">Szereplők:</label>
+                    <p  style="border: #000000;" id="szereplok">@foreach (var fc in film_cast)
+                            {
+                                if (fc.filmCim.Equals(film.Cim))
+                                    foreach (var szinesz in szineszek)
+                                        if (szinesz.Id == fc.SzineszId)
+                                    {
+                                        <span class="badge bg-primary me-1">@szinesz.Name</span>
+                                    }
+                            }
+                        
+                    </p>
+                    <hr />
+                        <label for="megjelenesiDatum" class="form-label">Megjelenési Dátum:</label>
+                        <p  id="megjelenesiDatum">@film.MegjelenesiDatum  
+                        </p><hr />
+                        <label for="imdbErtekeles" class="form-label">ImDb Értékelés:</label>
+                        <p  id="imdbErtekeles">@film.ImDbErtekeles
+                        </p><hr />
+                        <label for="sajatErtekeles" class="form-label">Saját Értékelés:</label>
+                        <p  id="sajatErtekeles">@film.SajatErtekeles
+                        </p><hr />
+
+                       
+                            
+                
+               
+                
+                <a role="button" class="btn btn-secondary" href="/Filmek">Cancel</a>
+                </div>
+          
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    [SupplyParameterFromForm]
+    private FilmekDetails? film { get; set; }
+    private Film_castDetails[]? film_cast { get; set; }
+    private SzineszekDetails[]? szineszek { get; set; }
+    private MufajokDetails[]? mufajok { get; set; }
+    
+    
+    private string title = string.Empty;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (film is not null)
+        {
+            return;
+        }
+
+        if (Id is not null)
+        {
+            film = await filmekClient.GetFilmAsync(Id.Value);
+            mufajok = await MufajClient.GetMufajokAsync();
+            szineszek = await SzineszekClient.GetSzineszekAsync();
+            film_cast = await Film_castClient.GetFilm_castokAsync();
+            title = $"{film.Cim}";
+        }        
+    }
+
+    
+
+    private async Task HandleSubmitAsync()
+    {               
+        NavigationManager.NavigateTo("/filmek");
+    }
+}
