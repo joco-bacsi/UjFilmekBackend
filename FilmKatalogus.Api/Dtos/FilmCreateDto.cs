@@ -6,7 +6,7 @@ public record class FilmCreateDto(
     [Required]string Rendezo, 
     [Required]string Cim, 
     int MufajId,
-    TimeOnly Hossz, 
+    int Hossz, 
     [Required]string Nyelv, 
     DateOnly MegjelenesiDatum,
     double ImDbErtekeles, 

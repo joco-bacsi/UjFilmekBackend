@@ -5,7 +5,7 @@ namespace FilmKatalogus.Api.Dtos;
     string Rendezo, 
     string Cim, 
     int MufajId, 
-    TimeOnly Hossz, 
+    int Hossz, 
     string Nyelv, 
     DateOnly MegjelenesiDatum,
     double ImDbErtekeles, 

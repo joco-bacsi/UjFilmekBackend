@@ -1,7 +1,6 @@
 ﻿@page "/Filmek"
 @inject FilmekClient Client
 @inject MufajClient MufajClient
-@using System.Linq
 
 @attribute [StreamRendering]
 
@@ -84,7 +83,7 @@ else
                         }
                     
                         </td>             
-                    <td>@film.Hossz.ToString()</td>
+                    <td>@film.Hossz<p> perc</p></td>
                     <td>@film.Nyelv</td>
                     <td>@film.MegjelenesiDatum.ToString()</td>
                     <td>@film.ImDbErtekeles</td>
@@ -97,13 +96,12 @@ else
                             <a class="btn btn-primary me-2" role="button" href="@StabUrl(film.Id)">
                                 <i class="bi bi-search"></i>
                             </a>
-                            <!--<button class="btn btn-danger" 
-                                    data-bs-toggle="modal" 
-                                    data-bs-target="@GetDeleteModalId(film)">
+                            <button class="btn btn-danger" 
+                                    @onclick="@(() => GetDeleteModalId(film))">
                                 <i class="bi bi-x-lg"></i>
-                            </button>-->
+                            </button>
                         </div>
-                        <!-- <DeleteFilm Film="@film" /> -->
+                        <DeleteFilm Film="@film" />
                     </td>
                 </tr>
             }
@@ -112,6 +110,23 @@ else
 }
 
 @code {
+    /*public class TimeConverters
+    {
+        public TimeOnly NumberToTime(FilmekDetails film)
+        {
+            int number = film.Hossz;
+            int ora = 0;
+            while (number / 60 >= 1)
+            {
+                number -= 60;
+                ora++;
+            }
+            return new TimeOnly(ora, number);
+        }
+        public static int TimeToNumber(TimeOnly ido) => (ido.Hour * 60) + ido.Minute;
+        public static string TimeToString(TimeOnly ido) => ido.ToString("HH:mm");
+    }*/
+
     private FilmekDetails[]? filmek;
     private MufajokDetails[]? mufajok;
 
@@ -124,8 +139,9 @@ else
     private static string FilmUrl(int id) => $"/editfilm/{id}";
     private static string StabUrl(int id) => $"/stab/{id}";
 
-    /*private string GetDeleteModalId(Film_castDetails film)
+    private async Task GetDeleteModalId(FilmekDetails film)
     {
-        return $"#{DeleteSzinesz.GetModalId(szinesz)}";
-    }*/
+        await Client.DeleteFilmAsync(film!.Id);
+        filmek = await Client.GetFilmekAsync();
+    }
 }

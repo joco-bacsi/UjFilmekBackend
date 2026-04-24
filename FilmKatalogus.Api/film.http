@@ -75,7 +75,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:5086/szineszek/2
+DELETE http://localhost:5086/filmek/34
 Content-Type: application/json
 
 ###

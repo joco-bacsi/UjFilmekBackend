@@ -2,7 +2,7 @@ using System;
 
 namespace GameStore.Frontend.Models;
 
-public class FilmekDetails
+public class FilmekSummary
 {
     public int Id {get; set;}
     public required string Rendezo {get; set;}

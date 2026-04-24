@@ -1,9 +1,9 @@
 ﻿@page "/editFilm"
 @page "/editFilm/{id:int}"
+@using Filmkatalogus.Converters
 @attribute [StreamRendering]
 
 @rendermode InteractiveServer
-
 @inject NavigationManager NavigationManager
 @inject FilmekClient filmekClient
 
@@ -78,24 +78,26 @@ else
                 <DataAnnotationsValidator />
                 <ValidationSummary />
                 <div class="mb-3">
-                    <label for="name" class="form-label">Rendező:</label>
-                    <InputText id="name" @bind-Value="film.Rendezo" class="form-control" />
+                    <label for="rendezo" class="form-label">Rendező:</label>
+                    <InputText id="rendezo" @bind-Value="film.Rendezo" class="form-control" />
                     <ValidationMessage For="() => film.Rendezo" />
                 </div>
                 <div class="mb-3">
-                    <label for="genre" class="form-label">Cím:</label>
-                    <InputText id="name" @bind-Value="film.Cim" class="form-control" />
+                    <label for="cim" class="form-label">Cím:</label>
+                    <InputText id="cim" @bind-Value="film.Cim" class="form-control" />
                     <ValidationMessage For="() => film.Cim" />
                 </div>
                 <div class="mb-3">
-                    <label for="price" class="form-label">MűfajId:</label>
-                    <InputNumber id="price" @bind-Value="film.MufajId" @bind-Value:format="F2"
+                    <label for="mufajId" class="form-label">MűfajId:</label>
+                    <InputNumber id="mufajId" @bind-Value="film.MufajId" @bind-Value:format="F2"
                                  class="form-control text-end" />
                     <ValidationMessage For="() => film.MufajId" />
                 </div>
                 <div class="mb-3">
-                    <label for="releaseDate" class="form-label">Hossz:</label>
-                    <input type="time" id="releaseDate" value="@hours:@minutes"  class="form-control" />
+                    <label for="hossz" class="form-label">Hossz:</label>
+                    <InputNumber id="hossz" @bind-Value="film.Hossz" /><p> perc</p>
+                        
+                    <ValidationMessage For="() => film.Hossz" />
                     
                 </div>
                 <div class="mb-3">
@@ -109,14 +111,14 @@ else
                 </div>
             
                 <div class="mb-3">
-                    <label for="price" class="form-label">imDbÉrtékelés:</label>
-                    <InputNumber id="price" @bind-Value="film.ImDbErtekeles" @bind-Value:format="F2"
+                    <label for="imdb" class="form-label">imDbÉrtékelés:</label>
+                    <InputNumber id="imdb" @bind-Value="film.ImDbErtekeles" @bind-Value:format="F2"
                                  class="form-control text-end" />
                     <ValidationMessage For="() => film.ImDbErtekeles" />
                 </div>
                 <div class="mb-3">
-                    <label for="price" class="form-label">Saját Értékelés:</label>
-                    <InputNumber id="price" @bind-Value="film.SajatErtekeles" @bind-Value:format="F2"
+                    <label for="sajat" class="form-label">Saját Értékelés:</label>
+                    <InputNumber id="sajat" @bind-Value="film.SajatErtekeles" @bind-Value:format="F2"
                                  class="form-control text-end" />
                     <ValidationMessage For="() => film.SajatErtekeles" />
                 </div>
@@ -129,13 +131,28 @@ else
 }
 
 @code {
+    public class TimeConverters
+    {
+        public static TimeOnly NumberToTime(int number)
+        {
+            int ora = 0;
+            while (number / 60 >= 1)
+            {
+                number -= 60;
+                ora++;
+            }
+            return new TimeOnly(ora, number);
+        }
+        public static int TimeToNumber(TimeOnly ido) => (ido.Hour * 60) + ido.Minute;
+        public static string TimeToString(TimeOnly ido) => ido.ToString("HH:mm");
+    }
+
     [Parameter]
     public int? Id { get; set; }
 
     [SupplyParameterFromForm]
     private FilmekDetails? film { get; set; }
-    int hours = 0;
-    int minutes = 0;
+
     private string title = string.Empty;
 
     protected override async Task OnParametersSetAsync()
@@ -149,8 +166,7 @@ else
         {
             film = await filmekClient.GetFilmAsync(Id.Value);
             title = $"Edit {film.Cim}";
-            hours = film.Hossz.Hour;
-            minutes = film.Hossz.Minute;
+
         }
         else
         {
@@ -169,10 +185,8 @@ else
 
     private async Task HandleSubmitAsync()
     {
+
         ArgumentNullException.ThrowIfNull(film);
-        film.Hossz = new TimeOnly(hours, minutes);
-        
-        
 
          if (Id is null)
         {
@@ -186,4 +200,5 @@ else
      
         NavigationManager.NavigateTo("/filmek");
     }
+    private string IdoToOlvashato(int ido) => TimeConverters.TimeToString(TimeConverters.NumberToTime(ido));
 }
